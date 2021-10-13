@@ -28,21 +28,22 @@ const destroyBtnRef = document.querySelector('button[data-destroy]')
 
 
 createBtnRef.addEventListener('click', onClickAddBoxes)
-destroyBtnRef.addEventListener('click')
+destroyBtnRef.addEventListener('click', onClickDestroyBoxes)
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
 function createBoxes(amount) {
+  
   for (let i = 1; i <= amount; i += 1) {
     const box = document.createElement('div');
     const color = getRandomHexColor();
+    
     boxesRef.append(box);
     box.style.backgroundColor = color;
     box.style.width = '30px';
     box.style.height = '30px';
-    
   }
 }
 
@@ -51,7 +52,9 @@ function onClickAddBoxes(event) {
   createBoxes(amount)
 }
 function onClickDestroyBoxes(event) {
-  
+  boxesRef.childNodes.forEach(box => box.remove())
+  console.log(boxesRef.childNodes)
+  // boxesRef.children.remove()
 }
 // createBoxes(5)
 // console.dir(boxesRef.childNodes)
