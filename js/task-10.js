@@ -14,7 +14,7 @@ function getRandomHexColor() {
 
 function createBoxes(amount) {
   let size = 30;
-  
+  const boxes = [];
   for (let i = 1; i <= amount; i += 1) {
     const box = document.createElement('div');
     const color = getRandomHexColor();
@@ -23,10 +23,10 @@ function createBoxes(amount) {
     box.style.height = size + 'px'
     box.style.backgroundColor = color;
 
-    boxesRef.append(box);
-
     size += 10;
+    boxes.push(box)
   }
+  boxesRef.append(...boxes);
 }
 
 function onClickAddBoxes(event) {
