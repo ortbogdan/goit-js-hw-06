@@ -14,9 +14,12 @@ const images = [
 ];
 const listEl = document.querySelector("ul.gallery");
 const createGalleryListItem = (images = []) => {
+  const strings = [];
   images.forEach(({ url, alt }) => {
-    listEl.insertAdjacentHTML("beforeend", `<li><img src='${url}' alt='${alt}'></li>`)
+    let string = `<li><img src='${url}' alt='${alt}'></li>`;
+    strings.push(string);
   })
+  listEl.insertAdjacentHTML("beforeend", strings.join(''))
 }
 createGalleryListItem(images);
 // listEl.style.display = 'flex';
