@@ -12,15 +12,18 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
 const listEl = document.querySelector("ul.gallery");
-const createGalleryListItem = (images = []) => {
-  const strings = [];
-  images.forEach(({ url, alt }) => {
-    let string = `<li><img src='${url}' alt='${alt}'></li>`;
-    strings.push(string);
-  })
-  listEl.insertAdjacentHTML("beforeend", strings.join(''))
-}
-createGalleryListItem(images);
+const strings = images.map(({ url, alt }) => `<li><img src='${url}' alt='${alt}'></li>`).join('');
+listEl.insertAdjacentHTML("beforeend", strings)
+
+// const createGalleryListItem = (images = []) => {
+//   const strings = [];
+//   images.forEach(({ url, alt }) => {
+//     let string = `<li><img src='${url}' alt='${alt}'></li>`;
+//     strings.push(string);
+//   })
+//   listEl.insertAdjacentHTML("beforeend", strings.join(''))
+// }
 // listEl.style.display = 'flex';
 // listEl.style.listStyle = 'none';

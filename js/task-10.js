@@ -17,11 +17,10 @@ function createBoxes(amount) {
   const boxes = [];
   for (let i = 1; i <= amount; i += 1) {
     const box = document.createElement('div');
-    const color = getRandomHexColor();
     
     box.style.width = size + 'px'
     box.style.height = size + 'px'
-    box.style.backgroundColor = color;
+    box.style.backgroundColor = getRandomHexColor();
 
     size += 10;
     boxes.push(box)

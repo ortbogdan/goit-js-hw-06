@@ -1,7 +1,5 @@
 
 const formRef = document.querySelector('form.login-form');
-const emailRef = document.querySelector('input[type="email"]');
-const passwordRef = document.querySelector('input[type="password"]');
 
 const onTargetSendForm = event => {
     
