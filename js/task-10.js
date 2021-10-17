@@ -33,10 +33,5 @@ function onClickAddBoxes(event) {
   createBoxes(amount)
 }
 function onClickDestroyBoxes(event) {
-  const amount = inputRef.value;
-  for (let i = 1; i <= amount; i += 1) {
-    if (boxesRef.querySelector('div')) {
-      boxesRef.querySelector('div').remove()
-    }
-  }
+  boxesRef.innerHTML = '';
 }

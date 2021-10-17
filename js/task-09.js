@@ -12,3 +12,4 @@ function onClickChangeColor(event) {
   spanRef.textContent = color;
   document.body.style.backgroundColor = color; 
 }
+
